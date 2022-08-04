@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afiliación</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <main>
+        <div class="form_container">
+            <p>Formulario de afiliación</p>
+            <form onsubmit="submitForm(event)">
+                <div class="field">
+                    <input class="field_input"type="text" name="nombre" id="nombre" placeholder="Nombre completo" required>
+                    <span class="field_icon material-symbols-outlined">person</span>
+                </div>
+                <div class="field">
+                    <input class="field_input" type="email" name="email" id="email" placeholder="Email" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
+                    <span class="field_icon material-symbols-outlined">mail</span>
+                </div>
+                <div class="field">
+                    <input  class="field_input" type="text" id="telefono" name="telefono" placeholder="Telefono" required pattern="[+]?[0-9]{9,14}">
+                    <span class="field_icon material-symbols-outlined">phone_enabled</span>
+                </div>
+                <div class="field_button">
+                    <input  class="field_button_input" type="text" id="gustos" name="gustos">
+                    <span class="gustos_button" onclick="agregarGusto()">Gustos</span>   
+                </div>
+                <section class="gustos">
+                    <div class="gustos_img">
+                        <span class="material-symbols-outlined flag" id="flag">
+                            flag
+                            </span>
+                    </div>
+                    <table class="gustos_table">
+                        <tr class="gustos_table_header">
+                            <th class="nombre_gusto">Gusto</th>
+                            <th class="porcentaje_gusto">%</th>
+                            <th class="editar_gusto">edit</th>
+                        </tr>
+                    </table>
+                </section>
+                    <p>Pulce Aceptar para guardar los cambios o cancelar para anularlos</p>
+                    <div class="button_container hidden">
+                    <input class="button button_gray" id="guardarButton" value ="Aceptar" type="submit" onsubmit="submitForm(event)">  
+                    <span class="button button_red" onclick="cancelCambios()">Cancelar</span>   
+                    </div>
+            </form>
+        </div>
+    </main>
+</body>
+<script type="text/javascript" src="index.js"></script>
+</html>
